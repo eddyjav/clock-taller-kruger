@@ -11,9 +11,7 @@ const Clock = () => {
 
     const hora = time.getHours() * 30 ; 
     const minutos = time.getMinutes() * 6;
-    const segundos = time.getSeconds() * 6;
-
-   
+    const segundos = time.getSeconds() * 6;   
 
     return (
       <div className="clock">
