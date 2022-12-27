@@ -1,9 +1,25 @@
+import { useState } from "react";
+
 const Clock = () => {
+
+    const [time, setTime] = useState(new Date());
+    
+
+    setInterval(() => {
+         setTime(new Date());
+    }, 1000);
+
+    const hora = time.getHours() * 30 ; 
+    const minutos = time.getMinutes() * 6;
+    const segundos = time.getSeconds() * 6;
+
+   
+
     return (
       <div className="clock">
-        <div className="hand hour" data-hour-hand></div>
-        <div className="hand minute" data-minute-hand></div>
-        <div className="hand second" data-second-hand></div>
+        <div className="hand hour" style={{ transform:`rotate(${hora}deg)`}} data-hour-hand></div>
+        <div className="hand minute" style={{ transform:`rotate(${minutos}deg)`}} data-minute-hand></div>       
+        <div className="hand second" style={{ transform: `rotate(${segundos}deg)`}} data-second-hand></div>
         <div className="number number1">1</div>
         <div className="number number2">2</div>
         <div className="number number3">3</div>
